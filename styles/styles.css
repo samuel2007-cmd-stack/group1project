@@ -1,0 +1,7 @@
+.job-header {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 20px;
+    font-family: Arial, sans-serif;
+}
