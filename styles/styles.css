@@ -16,7 +16,7 @@
 
 
 .header-box {
-  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  background-color: #1E2433;
   border-radius: 8px;
   padding: 20px;
   margin: 20px auto;
@@ -194,7 +194,7 @@
   width: 60%;   /* adjust size (40–70% works well) */
   max-width: 400px;  /* prevents it from getting too large */
   height: auto;
-  display: block;
+  display: block;}
 /* samuel's work to apply.html */
 .center-cont {
     display: flex;
@@ -224,4 +224,8 @@ aside {
     border: 2px solid #3498db;
     padding:15px;
     box-sizing: border-box;
+    margin-top: 40px;
+}
+#anantroop{
+  text-align: center;
 }
