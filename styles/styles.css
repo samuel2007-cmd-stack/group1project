@@ -229,3 +229,6 @@ aside {
 #anantroop{
   text-align: center;
 }
+body {
+  background-color: lightblue; /* Or any other color name, hex code, or RGB value */
+}
