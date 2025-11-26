@@ -1,4 +1,86 @@
+:root {
+  --primary: #0077cc;
+  --secondary: #005fa3;
+  --accent: #ffdd57;
+  --neutral-light: #f5f9ff;
+  --neutral-dark: #222222;
+}
 
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  font-family: Arial, sans-serif;
+}
+
+
+.header-box {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  border-radius: 8px;
+  padding: 20px;
+  margin: 20px auto;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  color: #fff;
+}
+
+.header-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.logo {
+  height: 90px;
+  width: auto;
+}
+
+.nav-menu {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: #f0f0f0;
+  font-weight: 600;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
+}
+
+.nav-menu a:hover,
+.nav-menu a.active {
+  color: var(--accent);
+  border-bottom: 2px solid var(--accent);
+}
+
+
+
+
+
+/*AUTHOR: BEATRICE
+FILE: jobs.html*/
+
+/* ASIDE: 25% width, floats to the right, coloured border, margin & padding */
+.right-aside {
+  width: 25%;                    
+  float: right;                  
+  border: 3px solid var(--primary); 
+  padding: 18px;                
+  margin: 20px 20px 20px 0px;
+  background-color: var(--neutral-light);
+  border-radius: 8px;
+  box-sizing: border-box;
+}
 /*article container*/
 .job-posting {
     max-width: 900px;
