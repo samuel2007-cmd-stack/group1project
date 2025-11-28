@@ -64,6 +64,289 @@
 }
 
 
+/*---------------------------AUTHOR: BEATRICE-------------------------
+FILE: jobs.html*/
+
+:root {
+  --content-size: 1.2rem;   /* change this for all body text + meta */
+  --section-title-size: 1.5rem;  /* change this for all h2 */
+}
+
+body {
+  font-family: "Plus Jakarta Sans", Arial, sans-serif;  
+}
+
+
+.job-body,
+.job-body p,
+.job-body ul,
+.job-body ol,
+.job-body table,
+.job-body td,
+.job-body th,
+.job-meta,
+.right-aside p,
+.right-aside ul {
+font-size: var(--content-size);
+}
+
+.job-body h2 {
+  font-size: var(--section-title-size);
+  font-weight: 700;
+  margin-top: 1rem;
+  color: #347aca;
+  margin-bottom: .4rem;
+}
+
+
+/* JOB BANNER */
+.job-banner {
+  position: relative;
+  width: 100%;
+  height: 360px; 
+  overflow: hidden;
+  display: flex;               
+  flex-direction: column;      
+  justify-content: center;    
+  align-items: center;        
+  text-align: center; 
+}
+
+/* background image */
+.job-banner-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;   /* image stays behind */
+}
+
+/* gradient overlay */
+.job-banner::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(2, 70, 119, 0.85) 0%,   
+    rgba(0, 119, 204, 0.55) 50%,
+    rgba(0, 119, 204, 0.00) 100%);
+  z-index: 2;
+  pointer-events: none;
+}
+
+.job-banner-title,
+.job-banner-subtitle {
+  position: relative;
+  left: auto;
+  transform: none;
+  z-index: 3;
+  text-shadow: 0 2px 6px rgba(0,0,0,.4);
+  width: 100%;              
+  max-width: 100%;          
+  padding: 0 16px;           
+  margin: 0;
+}
+.job-banner-title { 
+  font-weight: 700;
+  font-size: clamp(3rem, 5vw, 3.5rem);
+  color: #ffffff;
+  margin-bottom: 12px;
+}
+
+.job-banner-subtitle { 
+  font-size: clamp(1.3rem, 2.8vw, 1.3rem);
+  color: #ffffff;
+  margin-top: 6px;
+}
+
+
+/* ASIDE: 25% width, floats to the right, coloured border, margin & padding */
+.right-aside {
+  width: 25%;
+  float: right;
+  background: linear-gradient(to bottom, #f3f3f0, #acd8e7);
+  border: 3px solid #acd8e7;      
+  border-radius: 20px;
+  box-sizing: border-box;
+  padding: 20px;
+  margin: 20px 20px 20px 0;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.right-aside h3 {
+  margin-top: 0;
+  font-size: 1.6rem;
+  color: #003e7e;                
+  font-weight: 700;
+}
+
+.right-aside p, .right-aside ul {
+  margin-bottom: 0;
+  color: #1a4f8d;
+  line-height: 1.45;
+}
+
+
+/*article container*/
+.job-posting {
+    max-width: 70%;
+    margin: 24px 0 24px 20px;
+    padding: 0; 
+    box-sizing: border-box;
+}
+/* the visual box around article */
+.job-card {
+  display: block;
+  border: 3px solid #ffffff;
+  border-radius: 16px;
+  padding: 14px;
+  background: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.30);
+}
+/* ensure summary is visible and can be styled like a row */
+summary {
+  display: block;                 /* REQUIRED so content doesn't collapse */
+  cursor: pointer;
+  outline: none;                  
+}
+
+/* hide the browser default marker (triangle) */
+summary::-webkit-details-marker {
+  display: none;
+}
+
+/* the header row layout: title left, ref right */
+.job-header .job-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;  
+ }
+
+/* remove default margins from heading*/
+.job-title {
+  font-size: 1.8rem;     
+  font-weight: 700;  
+  color: #0d4e96;    
+  margin: 0;
+  display: inline-block;
+  }
+
+/* smaller ref text */
+.job-ref {
+  font-size: 1.2rem;
+  white-space: nowrap;
+}
+
+/* Add a visible toggle indicator*/
+.job-card summary {
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 48px; /* space for chevron */
+}
+
+/* full-width bar*/
+.job-card summary::after {
+  content: "▾";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #acd8e7;  
+  padding: 2px 0;        /* bar height */
+  text-align: center;
+  font-size: 1.4rem;
+  pointer-events: none; /* clicks go to summary itself */
+  border-radius: 0 0 8px 8px;
+}
+
+/* when open show an up chevron */
+.job-card[open] > summary::after {
+  content: "▴";
+}
+
+/* focus outline for keyboard users*/
+.job-card summary:focus-visible {
+  box-shadow: 0 0 0 3px rgba(84, 197, 241, 0.178);
+  border-radius: 6px;
+}
+
+
+/* spacing between header and revealed body */
+.job-body {
+  padding-top: 6px;
+  border-top: 1px solid #eee;
+}
+
+/* job-meta row with even gaps */
+.job-meta {
+  display: flex;
+  gap: 30px;           /* equal spacing between meta items */
+  align-items: center;
+  line-height: 1.1;
+  
+  flex-wrap: wrap;     /* wrap on small screens */
+  margin-bottom: 0px;
+}
+
+/* pill style for meta items */
+.job-meta span {
+  border: 3px solid #acd8e7;
+  padding: 4px 10px;
+  border-radius: 20px;
+  background: #ffffff;
+}
+
+.job-summary,.key-responsibilities,.job-skills {
+  margin-top: 12px;
+}
+
+/*table styling */
+.job-skills table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.job-skills th,.job-skills td {
+  border: 1px solid #c6e3ec;
+  padding: 8px;
+  text-align: left;
+  vertical-align: top;
+}
+
+.job-footer {
+  width: 100%;                
+  background: #0d4e96;        
+  color: #ffffff;            
+  text-align: center;       
+  padding: 12px 0;            /* vertical spacing */
+  margin-top: 40px;           /* space above footer */
+}
+
+.job-footer p {
+  font-size: 0.9rem;         
+  margin: 0;                  
+}
+
+/* contain floats inside <main> so footer stays below them */
+main::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* make sure footer is forced below floats */
+.job-footer, footer {
+  clear: both;
+  width: 100%;
+  box-sizing: border-box;
+  position: relative; 
+  z-index: 1;
+  margin-top: 20px;   
+}
+/*end of beatrice's code*/
 .hero {
   background: url("images/hero-bg.jpg") center/cover no-repeat;
   position: relative;
