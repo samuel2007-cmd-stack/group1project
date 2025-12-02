@@ -66,16 +66,16 @@
 }
 
 
-/*---------------------------AUTHOR: BEATRICE-------------------------
-FILE: jobs.html*/
+/*--------------------------------------
+AUTHOR: BEATRICE THOMAS
+FILE: jobs.html
+PURPOSE: STYLES FOR JOB DESCRIPTION PAGE
+-----------------------------------------*/
 
 :root {
   --content-size: 1.2rem;   /* change this for all body text + meta */
   --section-title-size: 1.5rem;  /* change this for all h2 */
 }
-
-
-
 
 .job-body,
 .job-body p,
@@ -97,7 +97,6 @@ font-size: var(--content-size);
   color: #347aca;
   margin-bottom: .4rem;
 }
-
 
 /* JOB BANNER */
 .job-banner {
@@ -149,8 +148,7 @@ font-size: var(--content-size);
   margin: 0;
 }
 .job-banner-title { 
-  font-weight: 700;
-  font-size: clamp(3rem, 5vw, 3.5rem);
+  font: 700 clamp(3rem, 5vw, 3.5rem)/1.2 Arial, sans-serif;
   color: #ffffff;
   margin-bottom: 12px;
 }
@@ -160,7 +158,6 @@ font-size: var(--content-size);
   color: #ffffff;
   margin-top: 6px;
 }
-
 
 /* ASIDE: 25% width, floats to the right, coloured border, margin & padding */
 .right-aside {
@@ -188,7 +185,6 @@ font-size: var(--content-size);
   line-height: 1.45;
 }
 
-
 /*article container*/
 .job-posting {
     max-width: 70%;
@@ -205,19 +201,17 @@ font-size: var(--content-size);
   background: #fff;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.30);
 }
-/* ensure summary is visible and can be styled like a row */
+
 summary {
-  display: block;                 /* REQUIRED so content doesn't collapse */
+  display: block;        /*so content doesn't collapse */
   cursor: pointer;
   outline: none;                  
 }
 
-/* hide the browser default marker (triangle) */
-summary::-webkit-details-marker {
-  display: none;
+summary::marker {
+  content: "";
 }
 
-/* the header row layout: title left, ref right */
 .job-header .job-top {
   display: flex;
   justify-content: space-between;
@@ -225,7 +219,6 @@ summary::-webkit-details-marker {
   margin-bottom: 20px;  
  }
 
-/* remove default margins from heading*/
 .job-title {
   font-size: 1.8rem;     
   font-weight: 700;  
@@ -234,7 +227,6 @@ summary::-webkit-details-marker {
   display: inline-block;
   }
 
-/* smaller ref text */
 .job-ref {
   font-size: 1.2rem;
   white-space: nowrap;
@@ -244,7 +236,7 @@ summary::-webkit-details-marker {
 .job-card summary {
   position: relative;
   overflow: hidden;
-  padding-bottom: 48px; /* space for chevron */
+  padding-bottom: 48px;
 }
 
 /* full-width bar*/
@@ -255,7 +247,7 @@ summary::-webkit-details-marker {
   right: 0;
   bottom: 0;
   background: #acd8e7;  
-  padding: 2px 0;        /* bar height */
+  padding: 2px 0;       
   text-align: center;
   font-size: 1.4rem;
   pointer-events: none; /* clicks go to summary itself */
@@ -273,21 +265,20 @@ summary::-webkit-details-marker {
   border-radius: 6px;
 }
 
-
 /* spacing between header and revealed body */
 .job-body {
   padding-top: 6px;
   border-top: 1px solid #eee;
 }
 
-/* job-meta row with even gaps */
+/* job-meta row */
 .job-meta {
   display: flex;
-  gap: 30px;           /* equal spacing between meta items */
+  gap: 30px;           
   align-items: center;
   line-height: 1.1;
   
-  flex-wrap: wrap;     /* wrap on small screens */
+  flex-wrap: wrap;    
   margin-bottom: 0px;
 }
 
@@ -321,8 +312,8 @@ summary::-webkit-details-marker {
   background: #0d4e96;        
   color: #ffffff;            
   text-align: center;       
-  padding: 12px 0;            /* vertical spacing */
-  margin-top: 40px;           /* space above footer */
+  padding: 12px 0;            
+  margin-top: 40px;           
 }
 
 .job-footer p {
@@ -336,8 +327,6 @@ main::after {
   display: table;
   clear: both;
 }
-
-/* make sure footer is forced below floats */
 .job-footer, footer {
   clear: both;
   width: 100%;
@@ -346,7 +335,11 @@ main::after {
   z-index: 1;
   margin-top: 20px;   
 }
-/*end of beatrice's code*/
+/*--------------------------------------
+END OF CODE
+AUTHOR: BEATRICE THOMAS
+FILE: jobs.html
+-----------------------------------------*/
 .hero {
   background: url("images/hero-bg.jpg") center/cover no-repeat;
   position: relative;
@@ -578,4 +571,311 @@ input[type="submit"][value="reset form"] {
 input[type="submit"]:hover {
  background-color: var(--accent); /* Consistent hover */
 }
+
+/*--------------------------------------
+AUTHOR: BEATRICE THOMAS
+FILE: about.html
+PURPOSE: STYLES FOR ABOUT PAGE
+-----------------------------------------*/
+
+/* The banner box */
+.about-banner {
+  position: relative;
+  width: 100%;
+  min-height: 260px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  overflow: hidden; 
+  box-sizing: border-box;
+}
+
+.banner-bg {
+  position: absolute;
+  inset: 0;             
+  width: 100%;
+  height: 100%;
+  object-fit: cover;    
+  z-index: 0;
+}
+
+.about-banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(18, 51, 102, 0.6);
+  z-index: 1;
+}
+
+.about-banner h1 {
+  position: relative;
+  z-index: 2;           
+  color: #fcfdfd;
+  font-size: clamp(3.5rem, 5vw, 3rem);
+  margin: 0;
+  text-align: center;
+  font-weight: 700;
+  font-family: Arial, sans-serif;
+}
+/*GROUP MEMBER BOX*/
+.member-box {
+  width: 100%;                
+  background: rgb(248, 248, 248);
+  border-radius: 8px;
+  padding: 20px 30px;          
+  box-shadow: 0 4px 12px rgba(62, 62, 63, 0.315);
+  box-sizing: border-box;      
+  margin-top: 20px;              
+  display: flex;                
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+}
+
+.member-box h2 {
+  margin-top: 0;
+  font-size: 2rem;
+  color: #1e2841;
+  text-align: left;
+  font-family: Arial, sans-serif;
+  flex: 2;                      
+  order: 2;
+  font-weight: 700;
+  font-style: italic;
+}
+.member-list {
+  list-style: none;   
+  padding-left: 20px; 
+  margin: 0;
+  flex: 1;                    
+  font-size: 1.2rem;
+  text-align: right;
+  order: 2;
+}
+
+.member-list > li {
+  margin-bottom: 15px;
+  font-size: 1.6rem;
+  font-weight: 520;
+  color: #222;
+  font-family: Arial, sans-serif;
+}
+
+.member-list > li ul {
+  list-style: none;        
+  padding-left: 15px;    
+  margin-top: 5px;
+}
+
+.member-list > li ul li {
+  font-size: 1.2rem;
+  font-weight: normal;
+  color: #444;
+  font-family: Arial, sans-serif;
+}
+
+/* MEMBERS CONTRIBUTION SECTION */
+.members-contribution {
+  background: #1b1f55;        
+  padding: 40px 20px;        
+  margin: 40px 0;            
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+.memberscont-container {
+  display: flex;
+  justify-content: center;   
+  align-items: stretch;
+  gap: 30px;                 
+  flex-wrap: wrap;          
+  margin: 30px 0;
+  align-items: stretch;   
+
+}
+.memberscont-dl {
+  background: #fafafc;
+  flex: 0 1 280px;        /* flex-grow:0, flex-shrink:1, flex-basis:280px */
+  padding: 20px 22px;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.253);
+  margin: 0;
+  display: flex;
+  flex-direction: column;  
+  justify-content: flex-start;
+  align-self: stretch;    
+}
+
+.memberscont-dl dt {
+  font-size: 1.6rem;
+  font-weight: 520;
+  color: #080808;
+  text-align: right;
+  font-style: italic;    
+  margin-bottom: 12px;
+  font-family: Arial, sans-serif;
+}
+.memberscont-dl dd {
+  margin: 6px 0;
+  font-size: 1.2rem;
+  color: #0a0a0a;
+  text-align: left;
+  line-height: 1.3;
+  font-family: Arial, sans-serif;
+  display: list-item;      
+  list-style-type: disc;
+  margin-left: 20px;
+}
+
+.memberscont-dl dd::marker {
+  font-size: 1.2rem;      
+}
+
+.memberscont-title {
+  margin-top: 10px;  
+  font-family: Arial,  sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: white;
+  text-align: center;
+}
+
+/* GROUP IMAGE SECTION */
+.group-image {
+  position: relative;
+  width: 100%;
+  padding: 70px 20px;   
+  margin: 40px 0;
+  overflow: hidden;
+  text-align: center;
+  min-height: 400px;    
+}
+
+.groupimg-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;     
+  z-index: 0; 
+}
+
+.group-image::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(248, 245, 245, 0.377);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.groupimg-title,
+.groupimg-photo-box 
+.group-figure {
+  position: relative;
+  z-index: 2;
+}
+
+.groupimg-title {
+  color: #1b1f55;
+  font-size: 2.8rem;
+  margin-bottom: 25px;
+  font-family: Arial, sans-serif;
+  text-align: left;
+}
+
+.group-figure {
+  float: right;
+  margin: 0 0 20px 20px;
+  max-width: 45%;
+}
+.group-figure figcaption {
+  font-size: 1rem;
+  color: #f8f8f8;
+  text-align: center;
+  margin-top: 10px;
+  font-style: italic;
+  line-height: 1.4;
+  letter-spacing: 0.3px;
+  font-family: Arial, sans-serif;
+}
+
+.groupimg-photo {
+  max-width: 600px;
+  width: 100%;
+  height: auto;
+  border: 5px solid #ffffff;  /* shorthand border (assignment requirement) */
+  border-radius: 12px;
+  display: block;
+  margin: 0 auto;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+/* clear floats so the layout doesn't break */
+.group-image::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.members-interests-heading {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1e2841;
+  margin: 20px auto 10px;
+  font-family: Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.members-interests {
+  margin: 30px auto;
+  border-collapse: collapse;
+  width: 80%;
+  max-width: 800px;
+  background: #ffffff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  font-family: Arial, sans-serif;
+}
+
+.members-interests thead th {
+  background: #1e2841;       
+  color: white;
+  padding: 14px;
+  font-size: 1.3rem;
+  text-align: center;
+  font-weight: bold;
+}
+
+.members-interests td {
+  background: #f2f2f2;      
+  padding: 12px 14px;
+  text-align: center;
+  font-size: 1.2rem;
+  color: #333;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Last row: remove border (scoped) */
+.members-interests tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Hover effect for rows (scoped) */
+.members-interests tbody tr:hover td {
+  background: #e0e0e0; /* hex hover colour */
+}
+
+/*--------------------------------------
+END OF CODE
+AUTHOR: BEATRICE THOMAS
+FILE: about.html
+-----------------------------------------*/
+
+
+
+
+
 
