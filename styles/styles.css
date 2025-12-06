@@ -879,6 +879,49 @@ END OF CODE
 AUTHOR: BEATRICE THOMAS
 FILE: about.html
 -----------------------------------------*/
+/*--------------------------------------
+
+AUTHOR: SAMUEL MORAES
+FILE: apply.html
+-----------------------------------------*/
+/* Apply to ALL buttons inside the form */
+form input[type="submit"],
+form input[type="reset"],
+form button {
+    background-color: #1e293b;   /* Dark blue-gray background */
+    color: white;                /* White text */
+    font-size: 16px;             /* Text size */
+    padding: 12px 24px;          /* Button padding */
+    margin: 10px 5px;            /* Space around buttons */
+    border: none;                /* Remove default border */
+    border-radius: 6px;          /* Soft rounded edges */
+    cursor: pointer;             /* Pointer cursor */
+    transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+/* Hover effect */
+form input[type="submit"]:hover,
+form input[type="reset"]:hover,
+form button:hover {
+    background-color: #334155;    /* Slightly lighter */
+}
+
+/* Focus (keyboard navigation) */
+form input[type="submit"]:focus,
+form input[type="reset"]:focus,
+form button:focus {
+    outline: 3px solid #64748b;   /* Visible outline */
+    outline-offset: 2px;
+}
+
+/* Active effect (button press) */
+form input[type="submit"]:active,
+form input[type="reset"]:active,
+form button:active {
+    transform: scale(0.97);      /* Click animation */
+}
+
+
 
 
 
