@@ -4,7 +4,7 @@
         <meta charset="utf-8"/>
         <meta name="description" content="job application form program"/>
         <meta name="keywords" content="HTML, Form, tags"/>
-        <meta name=" author" content="Samuel" />
+        <meta name="author" content="Samuel" />
         <title>Job Application HTML</title>
         <link rel="stylesheet" href="styles/styles.css"> <!-- External stylesheet link -->
     </head>
@@ -23,10 +23,10 @@
                 <nav aria-label="Main Navigation">
                     <ul class="nav-menu">
                         <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="jobs.html">Job Descriptions</a></li>
-        <li><a href="apply.html">Apply Now</a></li>
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="info@ctrlaltelite.com.au">Email Us</a></li>
+                        <li><a href="jobs.html">Job Descriptions</a></li>
+                        <li><a href="apply.html">Apply Now</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="mailto:info@ctrlaltelite.com.au">Email Us</a></li>
                     </ul>
                 </nav>
             </div>
@@ -36,7 +36,7 @@
         <aside>
             <h2>THANK YOU FOR CHOOSING CTRLALTELITE.CO</h2>
             <p id="alert-message">
-                PLEASE FILL EACH AND EVERY PART OF THIS FORM TO ENSURE A SMOOTH SAIL TO YOUR POTENTIAL EMPLOYMENT OPPURTUNITY
+                PLEASE FILL EACH AND EVERY PART OF THIS FORM TO ENSURE A SMOOTH SAIL TO YOUR POTENTIAL EMPLOYMENT OPPORTUNITY
             </p>
         </aside>
 
@@ -52,65 +52,63 @@
                 <legend>PERSONAL DETAILS</legend>
 
                 <!-- First name field -->
-                <label>First Name</label>
-                <input type="text" size="20" pattern="^[a-zA-Z]{0,20}$" required="required" maxlength="20">
+                <label for="firstname">First Name</label>
+                <input type="text" id="firstname" name="firstname" size="20" pattern="^[a-zA-Z\s\-']{1,20}$" required maxlength="20">
                 <br><br>
 
                 <!-- Last name field -->
-                <label>Last Name</label>
-                <input type="text" size="20" pattern="^[a-zA-Z]{0,20}$" required="required" maxlength="20">
+                <label for="lastname">Last Name</label>
+                <input type="text" id="lastname" name="lastname" size="20" pattern="^[a-zA-Z\s\-']{1,20}$" required maxlength="20">
                 <br><br>
 
                 <!-- Date of birth field -->
-                <label>Date Of birth</label>
-                <input type="text" pattern="\d{2}-\d{2}-\d{4}" required="required"> <!-- dd-mm-yyyy format -->
+                <label for="dob">Date Of Birth</label>
+                <input type="date" id="dob" name="dob" required>
                 <br><br>
 
                 <!-- Email field -->
-                <label>Email Id</label>
-                <input type="text" required="required" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"> <!-- Email regex -->
+                <label for="email">Email Id</label>
+                <input type="email" id="email" name="email" required>
                 <br><br>
 
                 <!-- Phone number field -->
-                <label>Phone number</label>
-                <input type="text" required="required" maxlength="12" minlength="8"> <!-- Basic validation -->
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" required pattern="[0-9]{8,12}" maxlength="12">
                 <br><br>
             </fieldset>
 
             <!-- Gender selection -->
             <fieldset>
                 <legend>Gender</legend>
-                <input type="radio" name="gender" value="red">
-                <label>Male</label>
+                <input type="radio" id="male" name="gender" value="male" required>
+                <label for="male">Male</label>
 
-                <input type="radio" name="gender" value="red">
-                <label>Female</label>
-
-                <label></label> <!-- Empty label (unused) -->
+                <input type="radio" id="female" name="gender" value="female" required>
+                <label for="female">Female</label>
             </fieldset>
 
             <!-- Address section -->
             <fieldset>
                 <legend>Address Details</legend>
 
-                <label>Unit Number</label>
-                <input type="text" required="required" pattern="[0-9]{1,5}" maxlength="5" inputmode="numeric">
+                <label for="unitnumber">Unit Number</label>
+                <input type="text" id="unitnumber" name="unitnumber" required pattern="[0-9]{1,5}" maxlength="5" inputmode="numeric">
                 <br><br>
 
-                <label>Building Number</label>
-                <input type="text" required="required" pattern="[0-9]{1,5}" maxlength="5" inputmode="numeric">
+                <label for="buildingnumber">Building Number</label>
+                <input type="text" id="buildingnumber" name="buildingnumber" required pattern="[0-9]{1,5}" maxlength="5" inputmode="numeric">
                 <br><br>
 
-                <label>Street Name</label>
-                <input type="text" required="required" pattern="^[a-zA-Z]{0,20}$">
+                <label for="streetname">Street Name</label>
+                <input type="text" id="streetname" name="streetname" required pattern="^[a-zA-Z0-9\s\-']{1,40}$" maxlength="40">
                 <br><br>
 
-                <label>Zone</label>
-                <input type="text" required="required" pattern="[0-9]{1,5}" maxlength="2">
+                <label for="zone">Zone</label>
+                <input type="text" id="zone" name="zone" required pattern="[0-9]{1,2}" maxlength="2" inputmode="numeric">
                 <br><br>
 
-                <label>City</label>
-                <input type="text" size="40" pattern="^[a-zA-Z]{0,40}$" required="required" maxlength="40">
+                <label for="city">City</label>
+                <input type="text" id="city" name="city" size="40" pattern="^[a-zA-Z\s\-']{1,40}$" required maxlength="40">
                 <br><br>
             </fieldset>
 
@@ -119,37 +117,41 @@
                 <legend>JOB DETAILS</legend>
 
                 <!-- Job reference dropdown -->
-                <label>Job Reference Number</label>
-                <select id="ref" name="ref">
+                <label for="ref">Job Reference Number</label>
+                <select id="ref" name="ref" required>
                     <option value="">Please Select The Job Reference Number</option>
-                    <option value="Software Developer">#SWD93</option>
-                    <option value="Network Administrator">#NAD88</option>
-                    <option value="Cybersecurity">#CSA71</option>
-                    <option>#CEN54</option>
+                    <option value="Software Developer">Software Developer - #SWD93</option>
+                    <option value="Network Administrator">Network Administrator - #NAD88</option>
+                    <option value="Cybersecurity">Cybersecurity Analyst - #CSA71</option>
+                    <option value="Cloud Engineer">Cloud Engineer - #CEN54</option>
                 </select>
                 <br><br>
 
                 <!-- Technical skills checklist -->
-                <label>Required Technical List</label>
+                <label>Required Technical Skills (select at least one)</label>
                 <br><br>
-                <input type="checkbox" value="HTML" required> HTML 
+                <input type="checkbox" id="html" name="skills" value="HTML">
+                <label for="html">HTML</label>
                 <br><br>
-                <input type="checkbox" value="css" required> CSS
+                <input type="checkbox" id="css" name="skills" value="CSS">
+                <label for="css">CSS</label>
                 <br><br>
-                <input type="checkbox" value="python" required> PYTHON 
+                <input type="checkbox" id="python" name="skills" value="Python">
+                <label for="python">PYTHON</label>
                 <br><br>
-                <input type="checkbox" value="java" required> JAVA 
+                <input type="checkbox" id="java" name="skills" value="Java">
+                <label for="java">JAVA</label>
                 <br><br>
 
                 <!-- Other skills textarea -->
-                <label>Other skills</label>
+                <label for="otherskills">Other Skills</label>
                 <br><br>
-                <textarea>Please Enter Your Other Skills</textarea>
+                <textarea id="otherskills" name="otherskills" rows="4" cols="50" placeholder="Please Enter Your Other Skills"></textarea>
             </fieldset>
 
             <!-- Submit and reset buttons -->
-            <input type="submit" value="Submit"> <!-- Submit -->
-            <input type="submit" value="reset form"> <!-- This is actually another submit, not a reset -->
+            <input type="submit" value="Submit">
+            <input type="reset" value="Reset Form">
         </form>
         
     </body>
